@@ -1,5 +1,6 @@
 # :scroll: Django Cheat Sheet
-A cheat-sheet for creating web apps with the Django framework using the Python language. Most of the summaries and examples are based off [the official documentation](https://docs.djangoproject.com/en/2.0/) for Django v2.0.
+This is fork of [Django Cheat Sheet](https://github.com/lucrae/django-cheat-sheet) project
+A cheat-sheet for creating web apps with the Django framework using the Python language. Most of the summaries and examples are based off [the official documentation](https://docs.djangoproject.com/en/2.0/) for Django v3.0.
 
 ## Sections
 - :snake: [Initializing pipenv](#snake-initializing-pipenv-optional) (optional)
@@ -92,7 +93,7 @@ from django.http import HttpResponse
 def index(request):
     return HttpResponse("Hello, World!")
 ```
-- Still within the app directory, open (or create)  `urls.py` 
+- Still within the app directory, open (or create)  `urls.py`
 ```python
 from django.urls import path
 from . import views
@@ -152,7 +153,7 @@ def index(request):
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		
+
 		<link rel="stylesheet" href="{% static 'styles.css' %}">
 	</head>
 </html>
@@ -216,7 +217,7 @@ class Album(models.Model):
 >>> m = Musician.objects.get(pk=1)
 >>> a = m.album_set.get()
 ```
- 
+
 - A many-to-many relationship can be made with a `ManyToManyField`:
 ```python
 class Topping(models.Model):
@@ -233,7 +234,7 @@ class Pizza(models.Model):
 ```python
 ForeignKey(SomeModel, unique=True)
 ```
-	
+
 - For more detail, the [official documentation for database models]( https://docs.djangoproject.com/en/2.0/topics/db/models/) provides a lot of useful information and examples.
 
 ## :postbox: Creating model objects and queries
