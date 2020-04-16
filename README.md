@@ -456,3 +456,36 @@ from django.db import models
   ```python
   class PositiveIntegerField(**options)
   ```
+  * PositiveSmallIntegerField
+  ```python
+  class PositiveSmallIntegerField(**options)
+  ```
+  * SlugField
+  ```python
+  class SlugField(max_length=50, **options)
+  ```
+  * SmallAutoField
+  ```python
+  class SmallAutoField(**options)
+  ```
+  * SmallIntegerField
+  ```python
+  class SmallIntegerField(**options)
+  ```
+  * TextField
+  ```python
+  class TextField(**options)
+  ```
+  * TimeField
+  ```python
+  class TimeField(auto_now=False, auto_now_add=False, **options)
+  ```
+  * URLField
+  ```python
+  class URLField(max_length=200, **options)
+  ```
+  * UUIDField
+  ```python
+  class UUIDField(**options)
+  ```
+  
