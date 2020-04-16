@@ -346,3 +346,113 @@ from django.contrib.auth.models import User
   * has_perms(perm_list, obj=None)
   * has_module_perms(package_name)
   * email_user(subject, message, form_email=None, )
+
+## Model field reference
+
+```python
+from django.db import models
+```
+
+- Field options
+  * null  Default is False.
+  * blank Default is False.
+  * choices
+  * db_column
+  * db_index
+  * db_tablespace
+  * default
+  * editable
+  * error_messages
+  * help_text
+  * primary_key
+  * unique
+  * unique_for_date
+  * unique_for_month
+  * unique_for_year
+  * verbose_name
+  * validators
+
+- Fields types
+  * AutoField
+    ```python
+    class AutoField(**options)
+    ```
+  * BigAutoField
+    ```python
+    class BigAutoField(**options)
+    ```
+  * BigIntegerField
+  ```python
+  class BigIntegerField(**options)
+  ```
+  * BinaryField
+    ```python
+    class BinaryField(max_length=None, **options)
+    ```
+  * BooleanField
+    ```python
+    class BooleanField(**options)
+    ```
+  * CharField
+    ```python
+    class CharField(max_length=None, **options)
+    ```
+  * DateField
+    ```python
+    class DateField(auto_now=False, auto_now_add=False, **options)
+    ```
+  * DateTimeField
+    ```python
+    class DateTimeField(auto_now=False, auto_now_add=False, **options)
+    ```
+  * DecimalField
+    ```python
+    class DecimalField(max_digits=None, decimal_places=None, **options)
+    ```
+  * DurationField
+    ```python
+    class DurationField(**options)
+    ```
+  * EmailField
+  ```python
+  class EmailField(max_length=254, **options)
+  ```
+  * FileField
+    * FieldFile
+  ```python
+  class FileField(upload_to=None, max_length=100, **options)
+  ```
+  * FilePathField
+  ```python
+  class FilePathField(path=None, match=None, recursive=False, max_length=100, **options)
+  ```
+    * FilePathField.allow_files
+    * FilePathField.allow_folders
+  * FloatField
+  ```python
+  class FloatField(**options)
+  ```
+  * ImageField
+  ```python
+  class ImageField(upload_to=None, height_field=None, width_field=None, max_length=100, **options)
+  ```
+  * IntegerField
+  ```python
+  class IntegerField(**options)
+  ```
+  * GenericIPAddressField
+  ```python
+  class GenericIPAddressField(protocol=’both’, unpack_ipv4=False, **options)
+  ```
+  * NullBooleanField
+  ```python
+  class NullBooleanField(**options)
+  ```
+  * PositiveBigIntegerField
+  ```python
+  class PositiveBigIntegerField(**options)
+  ```
+  * PositiveIntegerField
+  ```python
+  class PositiveIntegerField(**options)
+  ```
