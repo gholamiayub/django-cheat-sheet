@@ -488,4 +488,31 @@ from django.db import models
   ```python
   class UUIDField(**options)
   ```
-  
+
+- Relationship fields
+  * ForeignKey
+  ```python
+  class ForeignKey(to, on_delete, **options)
+  ```
+    A many-to-one relationship. Requires two positional arguments:
+    the class to which the model is related and the on_delete option.
+
+    To create a recursive relationship – an object that has a many-to-one
+    relationship with itself – use models.ForeignKey('self', on_delete=models.CASCADE)
+      * ForeignKey on_delete arguments
+        * CASCADE
+          > Cascade deletes. Django emulates the behavior of the SQL constraint ON DELETE CASCADE and also deletes the object containing the ForeignKey.
+          >
+          > Model.delete() isn’t called on related models, but the pre_delete and post_delete signals are sent for all deleted objects.
+
+        * PROTECT
+          > Prevent deletion of the referenced object by raising ProtectedError, a subclass of django.db.IntegrityError.
+
+        * SET_NULL
+          > Set the ForeignKey null; this is only possible if null is   True.
+
+        * SET_DEFAULT
+          > Set the **ForeignKey** to its default value; a default for the **ForeignKey** must be set.
+
+        * SET()
+          > Set the **ForeignKey** to the value passed to SET(), or if a callable is passed in, the result of calling it. In most cases, passing a       callable will be necessary to avoid executing queries at the time your models.py is imported:
